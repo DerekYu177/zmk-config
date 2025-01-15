@@ -12,16 +12,6 @@
 // #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
 // #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
-// these are purely shortcuts such that layer 3 look nice :)
-#define MOUSE_U     (&mmv MOVE_UP)
-#define MOUSE_R     (&mmv MOVE_RIGHT)
-#define MOUSE_L     (&mmv MOVE_LEFT)
-#define MOUSE_D     (&mmv MOVE_DOWN)
-#define BRI_U       (&kp C_BRIGHTNESS_INC)
-#define BRI_D       (&kp C_BRIGHTNESS_DEC)
-#define VOL_U       (&kp C_VOLUME_UP)
-#define VOL_D       (&kp C_VOLUME_DOWN)
-
 &mt {
     tapping-term-ms = <200>;
     flavor = "tap-preferred";
@@ -83,9 +73,9 @@
         right-deep-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-    &bt BT_CLR_ALL &bt BT_CLR &trans &trans &trans              VOL_U       &mkp RCLK   MOUSE_U    &mkp LCLK    BRI_U
+    &bt BT_CLR_ALL &bt BT_CLR &trans &trans &trans          &kp C_VOLUME_UP     &mkp RCLK       &mmv MOVE_UP    &mkp LCLK       &kp C_BRIGHTNESS_INC
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-    &trans &trans &trans &trans &trans                              VOL_D       MOUSE_L     MOUSE_D     MOUSE_R     BRI_D
+    &trans &trans &trans &trans &trans                      &kp C_VOLUME_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp C_BRIGHTNESS_DEC
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans     &trans     &trans      &trans       &trans
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
