@@ -86,9 +86,9 @@
         right-deep-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-    &trans         &trans      &trans      &trans      &trans       V_UP()     &mkp RCLK  MOUSE_UP()   &mkp LCLK     B_UP()
+    &trans         &trans      &trans      &trans      &trans       V_UP        &mkp RCLK   MOUSE_UP   &mkp LCLK     B_UP
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-    &trans          &trans      &trans      &trans      &trans      V_D()      MOUSE_L()   MOUSE_D()   MOUSE_R()     B_D()
+    &trans          &trans      &trans      &trans      &trans      V_D         MOUSE_L     MOUSE_D     MOUSE_R      B_D
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans     &trans     &trans      &trans       &trans
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
