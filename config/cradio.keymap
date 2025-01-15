@@ -10,6 +10,16 @@
 // #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
 // #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
+// these are purely shortcuts such that layer 3 look nice :)
+#define MOUSE_UP() &mmv MOVE_UP
+#define MOUSE_R() &mmv MOVE_RIGHT
+#define MOUSE_L() &mmv MOVE_LEFT
+#define MOUSE_D() &mmv MOVE_DOWN
+#define B_UP() &kp C_BRIGHTNESS_INC
+#define B_DOWN() &kp C_BRIGHTNESS_DEC
+#define V_UP() &kp VOLUME_UP
+#define V_D() &kp VOLUME_DOWN
+
 &mt {
     tapping-term-ms = <200>;
     flavor = "tap-preferred";
@@ -40,31 +50,31 @@
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
         &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
-                                        &kp LSHIFT      &mo 1       &lt 2 SPACE &mo 3
+                                        &kp LSHIFT   &lt 1 ESC     &lt 2 SPACE  &lt 3 BSPC
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
-        // Layer 1
+        // layer 1
         left-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-     &kp TAB    &trans  &mmv MOVE_UP    &trans      &trans     &trans &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &trans &trans
+        &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-    &kp ESC &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans   &trans  &kp C_VOLUME_DOWN &kp C_VOLUME_UP &mkp RCLK &mkp LCLK
+     &kp GRAVE   &kp LCTRL   &kp LALT   &kp LGUI   &kp SEMICOLON    &trans  &mt RGUI MINUS &kp RALT  &kp RIGHT_CONTROL &kp SQT
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans     &trans      &trans      &trans      &trans
+        &kp TAB      &trans      &trans      &trans      &trans      &trans      &kp EQUAL    &kp LBKT   &kp RBKT    &kp BSLH
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
-                                            &trans      &trans      &mo 4      &trans
+                                            &kp LSHIFT  &trans      &mo 4      &trans
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
         // layer 2
-        right-deep-thumb {
+        right-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-        &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp BSPC
+        &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-        &trans      &kp LCTRL   &kp LALT    &kp LGUI    &trans      &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp RET
+       &trans      &kp LCTRL   &kp LALT    &kp LGUI    &trans      &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp RET
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
         &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
@@ -73,17 +83,18 @@
             >;
         };
         // layer 3
-        right-thumb {
+        right-deep-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-        &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
+    &trans         &trans      &trans      &trans      &trans       V_UP()     &mkp RCLK  MOUSE_UP()   &mkp LCLK     B_UP()
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-     &kp GRAVE   &kp LCTRL   &kp LALT   &kp LGUI   &kp SEMICOLON    &trans  &mt RGUI MINUS &kp RALT  &kp RIGHT_CONTROL &kp SQT
+    &trans          &trans      &trans      &trans      &trans      V_D()      MOUSE_L()   MOUSE_D()   MOUSE_R()     B_D()
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-        &trans      &trans      &trans      &trans      &trans      &trans      &kp EQUAL    &kp LBKT   &kp RBKT    &kp BSLH
+    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans     &trans     &trans      &trans       &trans
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
-                                            &kp LSHIFT  &trans      &trans      &trans
+                                            &trans      &trans      &trans      &trans
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
+
             >;
         };
         // layer 4
@@ -92,7 +103,7 @@
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
      &kp F1        &kp F2      &kp F3     &kp F4      &kp F5         &kp F6       &kp F7      &kp F8     &kp F9     &kp F10
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-     &kp ESC    &kp LCTRL   &kp LEFT_ALT  &kp LGUI    &kp TAB        &trans      &trans     &trans      &trans      &trans
+     &trans    &kp LCTRL   &kp LEFT_ALT  &kp LGUI     &trans        &trans      &trans     &trans      &trans      &trans
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
      &trans        &trans     &trans      &trans      &trans         &kp F11     &kp F12    &trans    &sys_reset  &bootloader
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
