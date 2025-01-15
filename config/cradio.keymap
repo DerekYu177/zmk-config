@@ -31,6 +31,7 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // layer 0
         base {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
@@ -44,21 +45,21 @@
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
-
+        // Layer 1
         left-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-     &kp F1        &kp F2      &kp F3     &kp F4      &kp F5         &kp F6       &kp F7      &kp F8     &kp F9     &kp F10
+     &kp TAB    &trans  &mmv MOVE_UP    &trans      &trans     &trans &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &trans &trans
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-     &kp ESC    &kp LCTRL   &kp LEFT_ALT  &kp LGUI    &kp TAB        &trans      &trans     &trans      &trans      &trans
+    &kp ESC &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans   &trans  &kp C_VOLUME_DOWN &kp C_VOLUME_UP &mkp RCLK &mkp LCLK
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-     &trans        &trans     &trans      &trans      &trans         &kp F11     &kp F12    &trans      &trans      &trans
+    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans     &trans      &trans      &trans      &trans
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
-                                          &kp LSHIFT  &trans         &trans      &trans
+                                            &trans      &trans      &mo 4      &trans
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
-
+        // layer 2
         right-deep-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
@@ -68,11 +69,11 @@
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
         &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
-                                            &kp LSHIFT  &trans      &trans      &trans
+                                            &kp LSHIFT  &mo 4      &trans      &trans
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
-
+        // layer 3
         right-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
@@ -86,17 +87,17 @@
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
-
+        // layer 4
         meta {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-     &trans      &trans  &mmv MOVE_UP    &trans      &trans     &trans &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &trans &trans
+     &kp F1        &kp F2      &kp F3     &kp F4      &kp F5         &kp F6       &kp F7      &kp F8     &kp F9     &kp F10
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-    &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans   &kp K_MUTE  &kp C_VOLUME_DOWN &kp C_VOLUME_UP &mkp RCLK &mkp LCLK
+     &kp ESC    &kp LCTRL   &kp LEFT_ALT  &kp LGUI    &kp TAB        &trans      &trans     &trans      &trans      &trans
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans     &trans      &trans    &sys_reset  &bootloader
+     &trans        &trans     &trans      &trans      &trans         &kp F11     &kp F12    &trans    &sys_reset  &bootloader
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
-                                            &trans      &trans      &trans      &trans
+                                          &kp LSHIFT  &trans         &trans      &trans
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
