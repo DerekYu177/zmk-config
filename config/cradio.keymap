@@ -37,31 +37,33 @@
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
         &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
-                                        &kp LSHIFT   &lt 1 ESC     &lt 2 SPACE  &lt 3 BSPC
+                                        &kp LSHIFT   &lt 1 BSPC     &lt 2 SPACE  &lt 3 RET
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
+
         // layer 1
         left-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
         &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-     &kp GRAVE   &kp LCTRL   &kp LALT   &kp LGUI   &kp SEMICOLON    &trans  &mt RGUI MINUS &kp RALT  &kp RIGHT_CONTROL &kp SQT
+     &kp GRAVE   &kp LCTRL   &kp LALT   &kp LGUI   &kp SEMICOLON    &kp MINUS  &kp RGUI     &kp RALT    &kp RCTRL   &kp SQT
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-    &kp TAB  &kp LEFT_BRACE &kp RIGHT_BRACE &kp UNDER  &trans      &trans      &kp EQUAL    &kp LBKT   &kp RBKT    &kp BSLH
+     &kp TAB &kp LEFT_BRACE &kp RIGHT_BRACE &kp UNDER  &kp ESC      &trans      &kp EQUAL   &kp LBKT    &kp RBKT    &kp BSLH
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
                                             &kp LSHIFT  &trans      &mo 4      &trans
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
+
         // layer 2
         right-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
         &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-       &trans      &kp LCTRL   &kp LALT    &kp LGUI    &trans      &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp RET
+       &trans      &kp LCTRL   &kp LALT    &kp LGUI    &trans      &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT    &trans
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
         &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
@@ -69,11 +71,12 @@
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
+
         // layer 3
         right-deep-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-    &bt BT_CLR_ALL &bt BT_CLR &trans &trans &trans          &kp C_VOLUME_UP     &mkp RCLK       &mmv MOVE_UP    &mkp LCLK       &kp C_BRIGHTNESS_INC
+    &bt BT_CLR_ALL &bt BT_CLR &trans &trans &trans          &kp C_VOLUME_UP     &mkp LCLK       &mmv MOVE_UP    &mkp RCLK       &kp C_BRIGHTNESS_INC
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
     &trans &trans &trans &trans &trans                      &kp C_VOLUME_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp C_BRIGHTNESS_DEC
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
@@ -84,6 +87,7 @@
 
             >;
         };
+
         // layer 4
         meta {
             bindings = <
