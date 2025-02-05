@@ -9,12 +9,12 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // Home row mods macro
-// #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-// #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LCTRL k2  &ht LALT k3  &ht LGUI k4
+#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RALT k2  &ht RCTRL k3  &ht RSHFT k4
 
-&mt {
+&ht {
     tapping-term-ms = <250>;
-    flavor = "tap-preferred";
+    flavor = "balanced";
 };
 
 &caps_word {
@@ -37,11 +37,11 @@
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
         &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-        &kp A       &mt LCTRL S &mt LALT D  &mt RGUI F  &kp G       &kp H       &mt RGUI J  &mt RALT K  &mt RCTRL L &kp COLON
+        HRML(A,     S,          D,          F)          &kp G       &kp H       HRMR(J,     K,          L,          COLON)
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
         &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
-                                            &lt 1 ESC &mt LSHIFT BSPC &lt 2 SPACE &lt 3 RET
+                                            &kp BSPC    &mo 1       &lt 2 SPACE &lt 3 RET
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
@@ -50,13 +50,13 @@
         left-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-        &kp EXCL    &kp AT      &kp HASH    &kp DLLR   &kp PRCNT    &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR
+        &kp TILDA   &kp SQT     &trans      &trans      &kp LBKT     &kp RBKT   &trans      &trans      &trans      &kp SEMI
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-        &kp GRAVE   &kp LCTRL   &kp LALT    &kp LGUI   &kp SEMI     &kp MINUS   &kp RGUI    &kp RALT    &kp RCTRL   &kp SQT
+        HRML(GRAVE, DQT,        TAB,        UNDER)      &kp LBRC     &kp RBRC   HRMR(ESC,   EQUAL,      PLUS,       PIPE)
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-        &kp TAB     &kp LBRC    &kp RBRC    &trans     &caps_word   &trans      &kp EQUAL   &kp LBKT    &kp RBKT    &kp BSLH
+        &trans      &trans      &trans      &kp MINUS   &caps_word   &trans     &trans      &trans      &trans      &kp BSLH
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
-                                            &trans     &kp LSHIFT   &trans      &mo 4
+                                            &kp BSPC    &trans       &mo 4      &trans
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
@@ -65,13 +65,13 @@
         right-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-        &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
+        &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT   &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-        &trans      &kp LCTRL   &kp LALT    &kp LGUI    &trans      &kp UNDER   &kp RGUI    &kp RALT    &kp RCTRL   &kp DQT
+        HRML(N1,    N2,         N3,         N4)         &kp N5      &kp N6      HRMR(N7,    N8,         N9,         N0)
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
         &trans      &trans      &trans      &trans      &trans      &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
-                                            &mo 4       &kp LSHIFT  &trans      &tog 3
+                                            &trans      &mo 4       &trans      &tog 3
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
@@ -96,13 +96,13 @@
         meta {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-     &kp F1        &kp F2      &kp F3     &kp F4      &kp F5         &kp F6       &kp F7      &kp F8     &kp F9     &kp F10
+     &kp F1        &kp F2      &kp F3     &kp F4      &kp F5        &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-     &trans    &kp LCTRL   &kp LEFT_ALT  &kp LGUI     &trans        &trans      &trans     &trans      &trans      &trans
+     &kp LSHIFT    &kp LCTRL   &kp LEFT_ALT  &kp LGUI     &trans    &trans      &trans      &trans      &trans      &trans
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-     &trans        &trans     &trans      &trans      &trans         &kp F11     &kp F12    &trans    &sys_reset  &bootloader
+     &trans        &trans     &trans      &trans      &trans        &kp F11     &kp F12     &trans    &sys_reset  &bootloader
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
-                                          &trans      &kp LSHIFT    &trans      &trans
+                                          &trans      &trans        &trans      &trans
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
             >;
         };
