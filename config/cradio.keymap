@@ -9,23 +9,23 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LCTRL k2  &ht LALT k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RALT k2  &ht RCTRL k3  &ht RSHFT k4
-
-&ht {
-    tapping-term-ms = <250>;
-    flavor = "balanced";
-};
+#define HRML(k1,k2,k3,k4) &bhm LSHFT k1  &bhm LCTRL k2  &bhm LALT k3  &bhm LGUI k4
+#define HRMR(k1,k2,k3,k4) &bhm RGUI k1  &bhm RALT k2  &bhm RCTRL k3  &bhm RSHFT k4
 
 &caps_word {
     continue-list = <UNDERSCORE>;
 };
 
 / {
-    conditional_layers { compatible = "zmk,conditional-layers"; };
-
-    combos {
-        compatible = "zmk,combos";
+    behaviors {
+        bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
