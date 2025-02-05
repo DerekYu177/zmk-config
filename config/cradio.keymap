@@ -12,6 +12,8 @@
 #define HRML(k1,k2,k3,k4) &bhm LSHFT k1  &bhm LCTRL k2  &bhm LALT k3  &bhm LGUI k4
 #define HRMR(k1,k2,k3,k4) &bhm RGUI k1  &bhm RALT k2  &bhm RCTRL k3  &bhm RSHFT k4
 
+#define BT_M_SEL(k1, k2, k3, k4, k5) &bt BT_SEL k1 &bt BT_SEL k2 &bt BT_SEL k3 &bt BT_SEL k4 &bt BT_SEL k5
+
 &caps_word {
     continue-list = <UNDERSCORE>;
 };
@@ -27,7 +29,9 @@
             bindings = <&kp>, <&kp>;
         };
     };
+}
 
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -50,7 +54,7 @@
         left-thumb {
             bindings = <
 // ╭───────────┬───────────┬───────────┬───────────┬───────────╮ ╭───────────┬───────────┬───────────┬───────────┬───────────╮
-        &kp TILDA   &kp SQT     &trans      &trans      &kp LBKT     &kp RBKT   &trans      &trans      &trans      &kp SEMI
+        &kp TILDE   &kp SQT     &trans      &trans      &kp LBKT     &kp RBKT   &trans      &trans      &trans      &kp SEMI
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
         HRML(GRAVE, DQT,        TAB,        UNDER)      &kp LBRC     &kp RBRC   HRMR(ESC,   EQUAL,      PLUS,       PIPE)
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
@@ -84,7 +88,7 @@
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
     &trans &trans &trans &trans &trans                      &kp C_VOL_DN     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp C_BRI_DN
 // ├───────────┼───────────┼───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┼───────────┼───────────┤
-    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
+    BT_M_SEL(0, 1, 2, 3, 4)                                         &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
 // ╰───────────┴───────────┴───────────┼───────────┼───────────┤ ├───────────┼───────────┼───────────┴───────────┴───────────╯
                                             &trans      &trans      &trans      &tog 3
 //                                     ╰───────────┴───────────╯ ╰───────────┴───────────╯
